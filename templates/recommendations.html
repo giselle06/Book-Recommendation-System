@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recommendations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded-xl shadow-md w-full max-w-2xl">
+        <h1 class="text-2xl font-bold text-gray-800 mb-6 text-center">📖 Top Books in <span class="text-blue-600">{{ genre }}</span></h1>
+        <ul class="space-y-4">
+            {% for book in books.values %}
+                <li class="p-4 border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition">
+                    <div class="text-lg font-semibold text-gray-900">{{ book[0] }}</div>
+                    <div class="text-sm text-gray-600">by {{ book[1] }}</div>
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="text-center mt-6">
+            <a href="/" class="inline-block bg-gray-200 px-4 py-2 rounded hover:bg-gray-300 transition">⬅ Back to genre selection</a>
+        </div>
+    </div>
+</body>
+</html>
